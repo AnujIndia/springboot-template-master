@@ -1,0 +1,105 @@
+= Policy Service API Guide
+Chandrasekhar Raju Manthina;
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+[[overview]]
+== Overview
+Policy Service API provides Policy CRUD operations.
+
+[[overview-http-verbs]]
+=== HTTP verbs
+Policy Service API tries to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP verbs.
+
+|====
+| Verb | Usage
+
+| `POST`
+| Used to create a new policy
+
+| `GET`
+| Use to get Policy details
+|====
+
+
+[[overview-http-status-codes]]
+=== HTTP status codes
+Trip premium calculator tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP status codes.
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| The request completed successfully. Validation errors will be returned in the body of the response
+
+| `201 Created`
+| A new resource has been created successfully. The resource's URI is available from the response's
+`Location` header
+
+| `400 Bad Request`
+| The request was malformed.
+
+| `401 Unauthorized`
+| The requester is unauthorized.  Requester did not provide appropriate header token.
+
+| `403 Forbidden`
+| The request was forbidden.  The requesting ip address is not found in the white list.
+
+| `404 Not Found`
+| The requested resource did not exist
+|===
+
+[[resources]]
+== Resources ==
+[[get-policies]]
+=== Get Policies
+A `GET` request returns all the existing Policies.
+
+==== Request
+include::{snippets}/test-get-policies/http-request.adoc[]
+
+===== Example
+include::{snippets}/test-get-policies/http-request.adoc[]
+
+==== Response
+include::{snippets}/test-get-policies/response-fields.adoc[]
+
+===== Example
+include::{snippets}/test-get-policies/http-response.adoc[]
+
+[[get-policy]]
+=== Get Policy
+A `GET` request looks up Policy using the Policy Number.
+
+==== Request
+include::{snippets}/test-get-policy/path-parameters.adoc[]
+
+===== Example
+include::{snippets}/test-get-policy/http-request.adoc[]
+
+==== Response
+include::{snippets}/test-get-policy/response-fields.adoc[]
+
+===== Example
+include::{snippets}/test-get-policy/http-response.adoc[]
+
+[[create-policy]]
+=== Create Policy
+A `POST` request creates a new Policy.
+
+==== Request
+include::{snippets}/test-create-policy/request-fields.adoc[]
+
+===== Example
+include::{snippets}/test-create-policy/http-request.adoc[]
+
+==== Response
+include::{snippets}/test-create-policy/response-fields.adoc[]
+
+===== Example
+include::{snippets}/test-create-policy/http-response.adoc[]
