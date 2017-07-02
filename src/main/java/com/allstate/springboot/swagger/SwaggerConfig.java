@@ -28,7 +28,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("Policy Service API")
                 .description("Policy Service API provides Policy CRUD operations.")
-                .contact(new Contact("Chandrasekhar Raju", "", "cmant@allstate.com"))
+                .contact(new Contact("Anuj", "", "tpvnt@allstate.com"))
                 .version("1.0")
                 .build();
     }

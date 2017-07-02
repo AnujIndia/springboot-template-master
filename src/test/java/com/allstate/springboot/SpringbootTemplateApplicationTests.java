@@ -1,3 +1,9 @@
+/*
+ * The @SpringBootTest annotation tells Spring Boot to go and look for a main configuration 
+ * class (one with @SpringBootApplication for instance), and use that to start a Spring application
+ *  context.
+ * 
+ */
 package com.allstate.springboot;
 
 import org.junit.Test;
